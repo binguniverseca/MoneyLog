@@ -49,7 +49,7 @@ namespace MoneyLog.DAL
             return dt;
         }
         #endregion
-        #region Insert New Category
+        #region Insert New CAtegory
         public bool Insert(categoriesBLL c)
         {
             //Creating A Boolean VAriable and set its default value to false
@@ -61,7 +61,7 @@ namespace MoneyLog.DAL
             try
             {
                 //Writing Query to Add New Category
-                string sql = "INSERT INTO tbl_categories (category, description, added_date, added_by) VALUES (@category, @description, @added_date, @added_by)";
+                string sql = "INSERT INTO tbl_categories (category, description, added_date) VALUES (@category, @description, @added_date)";
 
                 //Creating SQL Command to pass values in our query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -69,7 +69,7 @@ namespace MoneyLog.DAL
                 cmd.Parameters.AddWithValue("@category", c.category);
                 cmd.Parameters.AddWithValue("@description", c.description);
                 cmd.Parameters.AddWithValue("@added_date", c.added_date);
-                cmd.Parameters.AddWithValue("@added_by", c.added_by);
+                
 
                 //Open Database Connection
                 conn.Open();
@@ -115,7 +115,7 @@ namespace MoneyLog.DAL
             try
             {
                 //Query to Update Category
-                string sql = "UPDATE tbl_categories SET category=@category, description=@description, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE tbl_categories SET category=@category, description=@description, added_date=@added_date WHERE id=@id";
 
                 //SQl Command to Pass the Value on Sql Query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -124,7 +124,6 @@ namespace MoneyLog.DAL
                 cmd.Parameters.AddWithValue("@category", c.category);
                 cmd.Parameters.AddWithValue("@description", c.description);
                 cmd.Parameters.AddWithValue("@added_date", c.added_date);
-                cmd.Parameters.AddWithValue("@added_by", c.added_by);
                 cmd.Parameters.AddWithValue("@id", c.id);
 
                 //Open DAtabase Connection
