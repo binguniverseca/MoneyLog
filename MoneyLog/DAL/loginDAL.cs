@@ -19,7 +19,7 @@ namespace MoneyLog.DAL
         //Static String to Connect Database
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
-        public async Task<bool> loginCheckAsync(loginBLL l)
+        public bool loginCheckAsync(loginBLL l)
         {
             //Create a boolean variable and set its value to false and return it
             bool isSuccess = false;

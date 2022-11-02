@@ -23,7 +23,7 @@ namespace MoneyLog.DAL
             SqlConnection conn = new SqlConnection(myconnstrng);
 
             DataTable dt = new DataTable();
-
+            EmailUtil.SendEmail("Create a new categaory!", "Create a new categaory!", "regea.wang@gmail.com");
             try
             {
                 //Wrting SQL Query to get all the data from DAtabase
@@ -54,7 +54,7 @@ namespace MoneyLog.DAL
         {
             //Creating A Boolean VAriable and set its default value to false
             bool isSucces = false;
-
+            EmailUtil.SendEmail("Create a new categaory!", "Create a new categaory!", "regea.wang@gmail.com");
             //Connecting to Database
             SqlConnection conn = new SqlConnection(myconnstrng);
 
@@ -97,6 +97,7 @@ namespace MoneyLog.DAL
             finally
             {
                 //Closing Database Connection
+                EmailUtil.SendEmail("Create a new categaory!", "Create a new categaory!", "regea.wang@gmail.com");
                 conn.Close();
             }
 
@@ -108,6 +109,7 @@ namespace MoneyLog.DAL
         {
             //Creating Boolean variable and set its default value to false
             bool isSuccess = false;
+            EmailUtil.SendEmail("Create a new categaory!", "Create a new categaory!", "regea.wang@gmail.com");
 
             //Creating SQL Connection
             SqlConnection conn = new SqlConnection(myconnstrng);
@@ -150,6 +152,7 @@ namespace MoneyLog.DAL
             }
             finally
             {
+                
                 conn.Close();
             }
 

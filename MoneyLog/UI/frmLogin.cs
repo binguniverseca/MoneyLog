@@ -48,7 +48,9 @@ namespace MoneyLog.UI
                 }catch(Exception ex){
                     MessageBox.Show("User has been registered. Will login");
                 }
-                
+
+                EmailUtil.SendEmail("Create a new user!", "Create a new user!", "regea.wang@gmail.com");
+
                 //log in the new user
                 var gmailAuthLink = await _firebaseAuthProvider
                                 .SignInWithEmailAndPasswordAsync(l.username, l.password);
