@@ -33,13 +33,13 @@
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.lblFooter.AutoSize = true;
             this.lblFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFooter.ForeColor = System.Drawing.Color.White;
-            this.lblFooter.Location = new System.Drawing.Point(485, 5);
+            this.lblFooter.Location = new System.Drawing.Point(543, 5);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(159, 17);
             this.lblFooter.TabIndex = 0;
@@ -69,9 +69,9 @@
             // 
             this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usersToolStripMenuItem,
-            this.productsToolStripMenuItem,
             this.categoryToolStripMenuItem,
-            this.transactionToolStripMenuItem});
+            this.incomeToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(1192, 24);
@@ -87,21 +87,16 @@
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
-            this.categoryToolStripMenuItem.Text = "Accounting Detail";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
-            // productsToolStripMenuItem
+            // incomeToolStripMenuItem
             // 
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.productsToolStripMenuItem.Text = "Catalog";
-            // 
-            // transactionToolStripMenuItem
-            // 
-            this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.transactionToolStripMenuItem.Text = "Transactions";
+            this.incomeToolStripMenuItem.Name = "incomeToolStripMenuItem";
+            this.incomeToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.incomeToolStripMenuItem.Text = "Income/Expense";
+            this.incomeToolStripMenuItem.Click += new System.EventHandler(this.incomeToolStripMenuItem_Click);
             // 
             // lblUser
             // 
@@ -127,7 +122,7 @@
             // 
             this.lblAppFName.AutoSize = true;
             this.lblAppFName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppFName.Location = new System.Drawing.Point(481, 196);
+            this.lblAppFName.Location = new System.Drawing.Point(544, 207);
             this.lblAppFName.Name = "lblAppFName";
             this.lblAppFName.Size = new System.Drawing.Size(99, 37);
             this.lblAppFName.TabIndex = 4;
@@ -137,7 +132,7 @@
             // 
             this.lblLName.AutoSize = true;
             this.lblLName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLName.Location = new System.Drawing.Point(569, 196);
+            this.lblLName.Location = new System.Drawing.Point(637, 207);
             this.lblLName.Name = "lblLName";
             this.lblLName.Size = new System.Drawing.Size(65, 37);
             this.lblLName.TabIndex = 5;
@@ -148,11 +143,18 @@
             this.lblSHead.AutoSize = true;
             this.lblSHead.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSHead.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblSHead.Location = new System.Drawing.Point(446, 233);
+            this.lblSHead.Location = new System.Drawing.Point(513, 244);
             this.lblSHead.Name = "lblSHead";
             this.lblSHead.Size = new System.Drawing.Size(230, 25);
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Accounting Management";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // frmAdminDashboard
             // 
@@ -172,7 +174,6 @@
             this.Text = "Admin Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashboard_FormClosed);
-            this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.menuStripTop.ResumeLayout(false);
@@ -189,13 +190,13 @@
         private System.Windows.Forms.MenuStrip menuStripTop;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem incomeToolStripMenuItem;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblLoggedInUser;
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Label lblLName;
         private System.Windows.Forms.Label lblSHead;
-        private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

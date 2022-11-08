@@ -26,16 +26,21 @@ namespace MoneyLog
             category.Show();
         }
 
-        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        private void incomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCategories category = new frmCategories();
-            category.Show();
+            frmExpense income = new frmExpense();
+            income.Show();
         }
 
-        private void frmAdminDashboard_Load(object sender, EventArgs e)
+        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmCategories category = new frmCategories();
-            category.Show();
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout frmAbout = new frmAbout();
+            frmAbout.Show();
         }
 
     }
